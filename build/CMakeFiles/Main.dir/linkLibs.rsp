@@ -1,0 +1,1 @@
+ "C:/Users/Jafar Iqbal/vcpkg/installed/x64-mingw-dynamic/lib/libturbojpeg.dll.a" "C:/Users/Jafar Iqbal/vcpkg/installed/x64-mingw-dynamic/lib/liblodepng.a" -lgdi32 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
