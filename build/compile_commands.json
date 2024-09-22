@@ -1,8 +1,0 @@
-[
-{
-  "directory": "D:/Projects/Programming/C and C++ Projects/imageProcessing/build",
-  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/Main.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Main.dir\\src\\main.cpp.obj -c \"D:\\Projects\\Programming\\C and C++ Projects\\imageProcessing\\src\\main.cpp\"",
-  "file": "D:/Projects/Programming/C and C++ Projects/imageProcessing/src/main.cpp",
-  "output": "CMakeFiles/Main.dir/src/main.cpp.obj"
-}
-]

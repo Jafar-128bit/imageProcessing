@@ -73,7 +73,8 @@ void convertAndCompressPng(const char *inputPath, const char *outputPath, int qu
     unsigned char *jpegBuf = nullptr;
 
     // Compress the image
-    if (tjCompress2(handle, rgbData.data(), width, 0, height, TJPF_RGB, &jpegBuf, &jpegSize, TJSAMP_444, quality, TJFLAG_FASTDCT) < 0) {
+    if (tjCompress2(handle, rgbData.data(), width, 0, height, TJPF_RGB, &jpegBuf, &jpegSize, TJSAMP_444, quality,
+                    TJFLAG_FASTDCT) < 0) {
         tjDestroy(handle);
         throw std::runtime_error("Failed to compress image to JPEG: " + std::string(tjGetErrorStr()));
     }
@@ -146,7 +147,8 @@ void compressJpeg(const char *inputPath, const char *outputPath, int quality) {
     unsigned long compressedSize = 0;
     unsigned char *compressedBuf = nullptr;
 
-    if (tjCompress2(compressHandle, rgbBuf, width, 0, height, TJPF_RGB, &compressedBuf, &compressedSize, TJSAMP_444, quality, TJFLAG_FASTDCT) < 0) {
+    if (tjCompress2(compressHandle, rgbBuf, width, 0, height, TJPF_RGB, &compressedBuf, &compressedSize, TJSAMP_444,
+                    quality, TJFLAG_FASTDCT) < 0) {
         tjDestroy(compressHandle);
         delete[] jpegBuf;
         delete[] rgbBuf;
@@ -198,14 +200,14 @@ int main() {
         std::cin >> quality;
 
         // Iterate through files in the input folder
-        for (const auto &entry : fs::directory_iterator(inputFolder)) {
+        for (const auto &entry: fs::directory_iterator(inputFolder)) {
             if (entry.is_regular_file()) {                           // Check if it's a file
                 std::string inputFile = entry.path().string();       // Full path of the input file
                 std::string fileName = entry.path().stem().string(); // File name without extension
                 std::string extension = getFileExtension(inputFile); // Get the file extension
 
                 // Convert extension to lowercase for consistency
-                for (char &c : extension) {
+                for (char &c: extension) {
                     c = std::tolower(c);
                 }
 
